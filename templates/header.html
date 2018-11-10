@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.runoob.com">
+                <img src="http://img.hb.aicdn.com/e08fa451f1f2969345e5e1fcac0a5c18ca5e7418108a73-2lRoZp_fw658"
+                width="100px"> </a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav" role="navigation">
+                <li><a href="{%url 'blog:blog_title'%}">BLOG</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
+                <li><a href="{%url 'account:user_login'%}">LOGIN</a> </li>
+            </ul>
+        </div>
+    </nav>
+</div>
