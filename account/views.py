@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render,redirect,reverse
+from django.http import HttpResponseRedirect,HttpResponse
 from .forms import LoginForm
 from django.contrib.auth import authenticate,login
 # Create your views here.
@@ -12,7 +12,7 @@ def user_login(request):
             user=authenticate(username=cd['username'],password=cd['password'])
             if user:
                 login(request,user)
-                return HttpResponse("Login in success")
+                return HttpResponseRedirect("/blog/")
             else:
                 return HttpResponse("username or password is not right")
         else:

@@ -1,19 +1,25 @@
 {%extends "base.html"%}
 {%block title%}blog article{%endblock%}
 {%block content%}
-<div class="row text-center vertical-middle-sm">
-    <h1>{{article.title}}</h1>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-md-8">
-        <p class="text-center"><span>{{article.author.username}}</span>
-            <span style="margin-left:20px">{{publish}}</span></p>
-        <div>{{article.body}}</div>
+<div class="layui-row ">
+    <div class="layui-col-md-offset5" style="font-size: large">
+        <h1>{{article.title}}</h1>
     </div>
-    <div class="col-xs-6 col-md-4">
+</div>
+<div class="layui-row">
+    <div class="layui-col-xs12 layui-col-md10">
+        <div class="layui-row">
+            <div class="layui-col-md-offset7">
+                <div class="layui-text" style="font-size: medium">{{article.author.username}} {{publish}}</div>
+            </div>
+            <div class="layui-text" style="font-size: large">{{article.body}}</div>
+        </div>
+    </div>
+    <div class="layui-col-xs6 layui-col-md2">
         <h2>test2</h2>
         <p>www.w3school.com</p>
-        <img src="http://img.hb.aicdn.com/3158851b482bee7f30058f2fe6ad21124d698ada11b7e-fg4mQL_fw658">
+        <img src="http://img.hb.aicdn.com/3158851b482bee7f30058f2fe6ad21124d698ada11b7e-fg4mQL_fw658"
+             width="200px">
     </div>
 </div>
 {%endblock%}

@@ -5,21 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{%block title%}{% endblock %}</title>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 
-<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
 </head>
 <body>
 {%include 'header.html'%}
-<div class="container">
+<div class="layui-container">
     {%block content%}
     {%endblock%}
 </div>
 {%include 'footer.html'%}
 {%block javascript%}{%endblock%}
 
+<script src="{% static 'layui/layui.js' %}"></script>
+<script>
+//一般直接写在一个js文件中
+layui.use(['layer', 'form','element'], function(){
+  var layer = layui.layer
+  ,form = layui.form,
+      element = layui.element;
 
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+});
+</script>
 
 </body>
 </html>

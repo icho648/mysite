@@ -2,23 +2,42 @@
 {%load staticfiles%}
 {%block title%}Login{%endblock%}
 {%block content%}
-<div class="row text-center vertical-middle-sm">
-    <h1>Login</h1>
-    <p>Input your username and password</p>
-    <form class="form-horizontal" action="." method="post">
-        {% csrf_token %}
-        <!--{{form.as_p}}-->
-        <div class="form-group">
-            <label for="{{form.username.id_for_label}}" class="col-md-5 control-label"
-                   style="color: red"><span class="glyphicon glyphicon-user"></span>Username</label>
-            <div class="col-md-6 text-left">{{form.username}}</div>
-        </div>
-        <div class="form-group">
-            <label for="{{form.password.id_for_label}}" class="col-md-5 control-label"
-                   style="color: blue"><span class="glyphicon glyphicon-floppy-open"></span>Password</label>
-            <div class="col-md-6 text-left">{{form.password}}</div>
-        </div>
-        <input type="submit" class="btn btn-primary btn-lg" value="Login">
-    </form>
+
+<div class="layui-row">
+    <div class="layui-col-md4">
+        <div class="layui-text">
+            <p>请输入你的账号密码</p></div>
+        <form class="layui-form" action="." method="post">
+            {% csrf_token %}
+            <div class="layui-form-item">
+                <label for="{{form.username.id_for_label}}" class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="{{form.password.id_for_label}}" class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <!--<div class="form-group">-->
+            <!--<label for="{{form.username.id_for_label}}" class="col-md-5 control-label"-->
+            <!--style="color: red"><span class="glyphicon glyphicon-user"></span>Username</label>-->
+            <!--<div class="col-md-6 text-left">{{form.username}}</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--<label for="{{form.password.id_for_label}}" class="col-md-5 control-label"-->
+            <!--style="color: blue"><span class="glyphicon glyphicon-floppy-open"></span>Password</label>-->
+            <!--<div class="col-md-6 text-left">{{form.password}}</div>-->
+            <!--</div>-->
+            <!--<input type="submit" class="btn btn-primary btn-lg" value="Login">-->
+            <input class="layui-btn layui-btn-primary" type="submit" value="登录">
+        </form>
+    </div>
 </div>
+
 {%endblock%}
